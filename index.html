@@ -1,1 +1,90 @@
-<!DOCTYPE html><html lang="fa" dir="rtl"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1">  <style>    body { background-color: lightblue; font-family: Tahoma, sans-serif; }    h1 { color: darkblue; text-align: center; }    .cart { text-align: center; font-size: 18px; font-weight: bold; color: darkblue; }    .product { background-color: white; padding: 15px; margin: 10px; border-radius: 10px; text-align: center; }    button { background-color: green; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; }    button:hover { background-color: darkgreen; }    footer { text-align: center; color: darkblue; padding: 15px; }  </style></head><body><h1>فروشگاه لوازم خانگی</h1><p style="text-align:center;">بهترین لوازم برای خونه‌ی شما</p><p class="cart">🛒 تعداد در سبد خرید: <span id="cart-count">0</span></p><div class="product">  <h2>یخچال سامسونگ</h2>  <p>قیمت: ۲۰ میلیون تومان</p>  <img src="https://placehold.co/300x200?text=Yakhchal" alt="یخچال سامسونگ">  <br><br>  <button onclick="addToCart()">افزودن به سبد خرید</button></div><div class="product">  <h2>ماشین لباسشویی ال‌جی</h2>  <p>قیمت: ۱۵ میلیون تومان</p>  <img src="https://placehold.co/300x200?text=Lebasshooyi" alt="ماشین لباسشویی ال‌جی">  <br><br>  <button onclick="addToCart()">افزودن به سبد خرید</button></div><div class="product">  <h2>جاروبرقی بوش</h2>  <p>قیمت: ۵ میلیون تومان</p>  <img src="https://placehold.co/300x200?text=Jaroobarghi" alt="جاروبرقی بوش">  <br><br>  <button onclick="addToCart()">افزودن به سبد خرید</button></div><footer>  <p>تلفن تماس: ۰۹۱۲۰۰۰۰۰۰۰</p></footer><script>  var count = 0;  function addToCart() {    count = count + 1;    document.getElementById("cart-count").innerText = count;  }</script></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>فروشگاه لوازم خانگی</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Tahoma, sans-serif; background: #f4f7fb; color: #222; }
+
+    header { background: linear-gradient(135deg, #0d47a1, #1e88e5); color: white; text-align: center; padding: 40px 15px; }
+    header h1 { margin: 0 0 10px; font-size: 28px; }
+    header p { margin: 0; opacity: 0.9; }
+
+    .cart-bar { position: sticky; top: 0; background: white; padding: 12px; text-align: center; font-weight: bold; color: #0d47a1; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 10; }
+
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; padding: 20px; max-width: 1000px; margin: 0 auto; }
+    .card { background: white; border-radius: 14px; padding: 15px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; border-radius: 10px; }
+    .card h2 { font-size: 18px; margin: 12px 0 6px; }
+    .price { color: #2e7d32; font-weight: bold; margin-bottom: 12px; }
+
+    button { background: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 15px; font-family: inherit; cursor: pointer; width: 100%; }
+    button:hover { background: #1b5e20; }
+
+    .whatsapp { position: fixed; bottom: 20px; left: 20px; background: #25d366; color: white; text-decoration: none; padding: 12px 18px; border-radius: 30px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.25); z-index: 20; }
+
+    footer { text-align: center; padding: 25px 15px 80px; color: #555; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>فروشگاه لوازم خانگی</h1>
+  <p>بهترین لوازم برای خونه‌ی شما</p>
+</header>
+
+<div class="cart-bar">
+  🛒 تعداد: <span id="cart-count">۰</span>
+  &nbsp;|&nbsp;
+  جمع: <span id="cart-total">۰</span> تومان
+</div>
+
+<section class="products">
+
+  <div class="card">
+    <img src="https://placehold.co/300x200?text=Yakhchal" alt="یخچال سامسونگ">
+    <h2>یخچال سامسونگ</h2>
+    <div class="price">۲۰,۰۰۰,۰۰۰ تومان</div>
+    <button onclick="addToCart(20000000)">افزودن به سبد خرید</button>
+  </div>
+
+  <div class="card">
+    <img src="https://placehold.co/300x200?text=Lebasshooyi" alt="ماشین لباسشویی ال‌جی">
+    <h2>ماشین لباسشویی ال‌جی</h2>
+    <div class="price">۱۵,۰۰۰,۰۰۰ تومان</div>
+    <button onclick="addToCart(15000000)">افزودن به سبد خرید</button>
+  </div>
+
+  <div class="card">
+    <img src="https://placehold.co/300x200?text=Jaroobarghi" alt="جاروبرقی بوش">
+    <h2>جاروبرقی بوش</h2>
+    <div class="price">۵,۰۰۰,۰۰۰ تومان</div>
+    <button onclick="addToCart(5000000)">افزودن به سبد خرید</button>
+  </div>
+
+</section>
+
+<footer>
+  <p>تلفن تماس: ۰۹۱۲۰۰۰۰۰۰۰</p>
+  <p>© فروشگاه لوازم خانگی</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/989120000000">💬 واتساپ</a>
+
+<script>
+  var count = 0;
+  var total = 0;
+
+  function addToCart(price) {
+    count = count + 1;
+    total = total + price;
+    document.getElementById("cart-count").innerText = count.toLocaleString("fa-IR");
+    document.getElementById("cart-total").innerText = total.toLocaleString("fa-IR");
+  }
+</script>
+
+</body>
+</html>
